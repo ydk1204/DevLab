@@ -1,0 +1,58 @@
+.container {
+  overflow: hidden;
+  width: 100%;
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.rollingbanner {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+}
+
+.wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.roller {
+  display: flex;
+  width: 200%; /* 두 개의 리스트를 포함할 수 있도록 너비를 설정 */
+  animation: scroll 20s linear infinite;
+}
+
+.roller > ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 50%; /* 각 리스트의 너비를 50%로 설정 */
+}
+
+.roller > ul > li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.roller > ul > li .status {
+  position: relative;
+  padding-left: 20px;
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+
+/* 애니메이션을 멈추는 클래스 */
+.paused {
+  animation-play-state: paused;
+}
